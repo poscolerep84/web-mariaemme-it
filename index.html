@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Questo dominio è ospitato e gestito da Omnia Service srl – IT, Cyber Security, Networking, Backup. Vicenza e Verona." />
-  <title>mariaemme.it – Ospitato da Omnia Service</title>
+  <title id="page-title">– Ospitato da Omnia Service</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -313,7 +313,7 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-inner">
-      <div class="domain-label">mariaemme.it</div>
+      <div class="domain-label" id="domain-label">mariaemme.it</div>
 
       <p class="hero-intro">Questo dominio è ospitato e gestito da</p>
       <h1 class="hero-company">
@@ -499,6 +499,11 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Dominio dinamico: mostra il dominio corrente nell'hero e nel titolo
+    var host = window.location.hostname || 'sconosciuto';
+    document.getElementById('domain-label').textContent = host;
+    document.getElementById('page-title').textContent = host + ' \u2013 Ospitato da Omnia Service';
   </script>
 </body>
 </html>
