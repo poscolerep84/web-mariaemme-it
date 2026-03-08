@@ -501,9 +501,14 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Dominio dinamico: mostra il dominio corrente nell'hero e nel titolo
-    var host = window.location.hostname || 'sconosciuto';
-    document.getElementById('domain-label').textContent = host;
-    document.getElementById('page-title').textContent = host + ' \u2013 Ospitato da Omnia Service';
+    var host = window.location.hostname;
+    if (host) {
+      document.getElementById('domain-label').textContent = host;
+      document.getElementById('page-title').textContent = host + ' \u2013 Ospitato da Omnia Service';
+    } else {
+      document.getElementById('domain-label').textContent = 'Grazie per aver visitato questa pagina';
+      document.getElementById('page-title').textContent = 'Ospitato da Omnia Service';
+    }
   </script>
 </body>
 </html>
